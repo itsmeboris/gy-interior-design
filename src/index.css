@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* GY Interior Design Color Palette */
+  --color-beige: 36 33% 97%;
+  --color-warm-white: 60 100% 99%;
+  --color-greige: 0 0% 90%;
+  --color-charcoal: 0 0% 20%;
+  --color-warm-brown: 30 20% 35%;
+  --color-gold: 36 60% 50%;
+  
+  /* Semantic Colors */
+  --background: var(--color-beige);
+  --foreground: var(--color-charcoal);
+  --surface: var(--color-warm-white);
+  --surface-hover: var(--color-greige);
+  --muted: var(--color-greige);
+  --muted-foreground: 0 0% 45%;
+  --accent: var(--color-warm-brown);
+  --accent-foreground: var(--color-warm-white);
+  --border: 30 15% 85%;
+  
+  /* Typography */
+  --font-hebrew: 'Heebo', sans-serif;
+  
+  /* Spacing */
+  --section-padding: 6rem;
+  --container-max: 1280px;
+  
+  /* Transitions */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+* {
+  font-family: var(--font-hebrew);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  direction: rtl;
+  text-align: right;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Utility Classes */
+.container-gy {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-padding {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+/* Text Styles */
+.text-display {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-heading {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.text-subheading {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.text-body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.text-small {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Portfolio Hover Effect */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-item img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.08);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, hsla(var(--foreground), 0.7) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: hsl(var(--foreground));
+  color: hsl(var(--surface));
+  padding: 1rem 2.5rem;
+  font-weight: 500;
+  border-radius: 0;
+  transition: var(--transition-smooth);
+  border: 1px solid hsl(var(--foreground));
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: hsl(var(--foreground));
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: hsl(var(--foreground));
+  padding: 1rem 2.5rem;
+  font-weight: 500;
+  border-radius: 0;
+  transition: var(--transition-smooth);
+  border: 1px solid hsl(var(--foreground));
+}
+
+.btn-secondary:hover {
+  background-color: hsl(var(--foreground));
+  color: hsl(var(--surface));
+}
+
+/* Input Styles */
+.input-gy {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid hsl(var(--border));
+  padding: 1rem 0;
+  width: 100%;
+  font-size: 1rem;
+  transition: var(--transition-fast);
+  outline: none;
+}
+
+.input-gy:focus {
+  border-bottom-color: hsl(var(--foreground));
+}
+
+.input-gy::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Navbar */
+.navbar-transparent {
+  background-color: transparent;
+}
+
+.navbar-solid {
+  background-color: hsl(var(--background));
+  box-shadow: 0 1px 0 hsl(var(--border));
+}
+
+/* Service Card */
+.service-card {
+  background-color: hsl(var(--surface));
+  padding: 2.5rem;
+  transition: var(--transition-smooth);
+  border: 1px solid transparent;
+}
+
+.service-card:hover {
+  border-color: hsl(var(--border));
+  transform: translateY(-4px);
+}
+
+/* Footer */
+.footer-bg {
+  background-color: hsl(30 15% 92%);
+}
