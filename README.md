@@ -25,4 +25,4 @@ npm run preview
 
 ## License
 
-© GY Studio. All rights reserved.
+© GY Interior Studio. All rights reserved.
