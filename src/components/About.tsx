@@ -20,7 +20,6 @@ const About = () => {
             
             <p className="text-charcoal font-medium">נשמח לקחת חלק במסע שלכם אל הבית שתמיד חלמתם עליו
 ברוכות הבאות למשפחה שלנו — למשפחה של GY STUDIO<br />
-              ברוכות הבאות למשפחה שלנו — למשפחה של GY STUDIO 🤍
             </p>
           </div>
         </div>
