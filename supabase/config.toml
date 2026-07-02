@@ -1,4 +1,7 @@
-project_id = "voplxyfobgvslvnpapnb"
+project_id = "gokoxjavfixchaedxdvm"
 
 [functions.send-contact-email]
+verify_jwt = false
+
+[functions.sync-instagram]
 verify_jwt = false
