@@ -153,3 +153,12 @@ export const Constants = {
     Enums: {},
   },
 } as const
+
+export type Testimonial = {
+  id: number
+  quote: string
+  name: string
+  detail: string
+  order: number
+  active: boolean
+}
