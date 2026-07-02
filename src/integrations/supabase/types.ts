@@ -162,3 +162,16 @@ export type Testimonial = {
   order: number
   active: boolean
 }
+
+export type InstagramPost = {
+  id: string
+  ig_media_id: string
+  permalink: string
+  caption: string | null
+  media_type: string
+  storage_path: string
+  dominant_color: string | null
+  timestamp: string
+  is_hidden: boolean
+  created_at: string
+}
