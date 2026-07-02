@@ -17,16 +17,22 @@ When you finish, send me back the **4 values** marked 🔑 below and I'll wire i
 
 ## Step 1 — Create a Meta app
 1. Go to https://developers.facebook.com/apps → **Create App**.
-2. Use case: **Other** → app type: **Business** → Next.
-3. Name it e.g. `GY Site Feed` → **Create app** (confirm password if asked).
+2. **App details**: name it e.g. `GY Site Feed` → Next.
+3. **Use cases** (this is the "Add use cases" screen): select
+   **"Manage messaging & content on Instagram"** (the Instagram-icon card:
+   *"Publish posts … with the Instagram API"*). This is the use case that exposes
+   the Instagram API with Instagram Login + the `instagram_business_basic`
+   permission we need. Do NOT pick the oEmbed / "Embed content in other websites"
+   option. → Next.
+4. Continue through **Business** → **Requirements** → **Overview** and create the app.
 
-## Step 2 — Add Instagram + generate a token
-1. In the app dashboard, find **Add product** → **Instagram** → **Set up**.
-2. Open **API setup with Instagram business login**.
-3. Under **Generate access tokens** → **Add account**, log in with the GY
+## Step 2 — Set up Instagram login + generate a token
+1. In the app dashboard left menu, open **Instagram** → **API setup with Instagram
+   business login**.
+2. Under **Generate access tokens** → **Add account**, log in with the GY
    Instagram business account and authorize the requested permission
    (`instagram_business_basic`).
-4. Click **Generate token**. Copy it somewhere safe.
+3. Click **Generate token**. Copy it somewhere safe.
    - 🔑 **(A) Instagram user id** — the numeric id shown next to the account.
    - This first token may be short-lived (1 hour) — we upgrade it in Step 3.
 
