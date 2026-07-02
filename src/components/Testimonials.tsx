@@ -36,7 +36,7 @@ const Testimonials = () => {
           </div>
 
           {/* Quote text */}
-          <p className="text-body text-charcoal/80 italic mb-8 leading-relaxed">
+          <p className="text-body text-charcoal/80 italic mb-8 leading-relaxed whitespace-pre-wrap">
             {t.quote}
           </p>
 
