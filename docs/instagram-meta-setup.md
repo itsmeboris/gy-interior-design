@@ -24,7 +24,12 @@ When you finish, send me back the **4 values** marked 🔑 below and I'll wire i
    the Instagram API with Instagram Login + the `instagram_business_basic`
    permission we need. Do NOT pick the oEmbed / "Embed content in other websites"
    option. → Next.
-4. Continue through **Business** → **Requirements** → **Overview** and create the app.
+4. **Business** step ("Which business portfolio…"): choose
+   **"I don't want to connect a business portfolio yet."** No portfolio or business
+   verification is needed — we only read our own account's media in development mode.
+   The developer/Facebook account does NOT need to be linked to the Instagram account;
+   the link happens in Step 2 when the IG account authorizes the token.
+5. Continue through **Requirements** → **Overview** and create the app.
 
 ## Step 2 — Set up Instagram login + generate a token
 1. In the app dashboard left menu, open **Instagram** → **API setup with Instagram
