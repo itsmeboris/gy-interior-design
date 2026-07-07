@@ -13,6 +13,7 @@ const Portfolio = () => {
       .from("instagram_posts")
       .select("*")
       .eq("is_hidden", false)
+      .neq("media_type", "VIDEO")
       .order("timestamp", { ascending: false })
       .limit(DISPLAY_COUNT)
       .then(({ data }) => {
