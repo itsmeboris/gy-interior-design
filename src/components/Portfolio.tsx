@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import type { InstagramPost } from "@/integrations/supabase/types";
 
-const DISPLAY_COUNT = 12;
+const DISPLAY_COUNT = 6;
 const BUCKET = "instagram-media";
 
 const Portfolio = () => {
