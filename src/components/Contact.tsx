@@ -66,6 +66,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   className="input-gy"
+                  dir="rtl"
                   required
                 />
               </div>
