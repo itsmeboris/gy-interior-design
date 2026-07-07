@@ -88,6 +88,19 @@ in Supabase (server-side, RLS-locked), never in the website code.
 - Set (D) as the function secret: `supabase secrets set CRON_SECRET=<D>`.
 - Deploy the function and run the first sync — your posts appear on the site.
 
+## Daily sync (already configured)
+A `pg_cron` job named `sync-instagram-daily` runs the sync every day at **04:00 UTC**.
+It calls the `sync-instagram` Edge Function with the `x-cron-secret` header (value
+stored as the `CRON_SECRET` Supabase function secret — not in git). The job was
+created via the Supabase Management API, so there is intentionally no cron migration
+file committed (that would leak the secret). To change the schedule or secret, update
+the `cron.job` entry and the `CRON_SECRET` secret together.
+
+Curation rules currently applied:
+- **Reels/videos are excluded** in the frontend query (`media_type != 'VIDEO'`).
+- Four specific posts are hidden via `is_hidden = true` (DVF80D5CJNo, DU4_YN-iP5D,
+  DU2o4V3CBfF, DU0eB8ziGWE).
+
 ## After it's live
 - The daily sync **auto-refreshes** the token, so it won't expire while the site runs.
 - To **hide a post**, flip `is_hidden = true` on its row in `instagram_posts` (I can
